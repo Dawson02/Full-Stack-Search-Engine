@@ -1,0 +1,43 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: #a9e5bb; /* Light green background */
+  text-align: center;
+  padding: 20px; /* Add some padding to the header */
+  display: flex;
+  justify-content: space-between; /* Align items to the start and end of the header */
+  align-items: center; /* Center items vertically within the header */
+}
+
+.header h1 {
+  font-size: 36px; /* Larger font size for the header */
+  margin: 0;
+  color: #007bff; /* Dark blue color for the header text */
+}
+
+.search-bar {
+  width: 300px; /* Adjust the width of the search bar */
+  height: 40px;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-button {
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
