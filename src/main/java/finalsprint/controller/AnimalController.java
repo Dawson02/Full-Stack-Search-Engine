@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/animals")
+@RequestMapping("/animals")
 public class AnimalController {
     private final AnimalService animalService;
 
@@ -25,13 +25,15 @@ public class AnimalController {
         return animalService.getAnimalById(id);
     }
 
-    @PostMapping
-    public Animal saveAnimal(@RequestBody Animal animal) {
-        return animalService.saveAnimal(animal);
-    }
-
-    @DeleteMapping("/{id}")
-    public void deleteAnimal(@PathVariable Long id) {
-        animalService.deleteAnimal(id);
+    @GetMapping("/search")
+    public List<Animal> searchAnimals(@RequestParam(required = false) String species,
+                                      @RequestParam(required = false) Integer age,
+                                      @RequestParam(required = false) String color,
+                                      @RequestParam(required = false) Double weight,
+                                      @RequestParam(required = false) String habitat,
+                                      @RequestParam(required = false) String diet,
+                                      @RequestParam(required = false) Integer averageLifespan,
+                                      @RequestParam(required = false) String predators) {
+        return animalService.searchAnimals(species, age, color, weight, habitat, diet, averageLifespan, predators);
     }
 }
