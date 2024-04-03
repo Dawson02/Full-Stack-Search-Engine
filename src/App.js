@@ -1,39 +1,22 @@
-import React, { useState } from "react";
-import "./App.css"; // Importing the default CSS file
-import "./styles.css"; // Importing the custom styles
+import { Route, Routes } from "react-router-dom";
 
+import "./App.css";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+
+import Search from "./pages/Search";
 function App() {
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Handle search logic here (for example, fetching data based on the search term)
-    console.log("Searching for:", searchTerm);
-  };
-
   return (
-    <div>
-      <header className="header">
-        <h1>Types of Animals</h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Search..."
-            value={searchTerm}
-            onChange={handleChange}
-            className="search-bar"
-          />
-          <button type="submit" className="search-button">
-            Search
-          </button>
-        </form>
-      </header>
-      <div className="container">{/* Add your content here */}</div>
-    </div>
+    <>
+      {/* <Header /> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/search" element={<Search />} />
+      </Routes>
+    </>
   );
 }
 

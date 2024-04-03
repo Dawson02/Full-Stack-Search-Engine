@@ -1,0 +1,51 @@
+/* Header.css */
+.header-container {
+  background-color: #4caf50; /* Attractive green background */
+  text-align: center;
+  padding: 20px 0; /* Add padding to space the content from the edges */
+}
+
+.header-container h1 {
+  font-size: 2.5em;
+  color: white; /* White text color */
+  font-weight: bold; /* Make the text bolder */
+  font-family: "Brush Script MT", cursive;
+}
+
+.header-container h1 img {
+  display: block; /* Make the image a block element */
+  margin: 10px auto; /* Center the image horizontally and add space */
+  width: 100px; /* Set the width of the image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.header-container nav {
+  display: inline-block; /* Display the navigation inline */
+}
+
+.header-container nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: inline-block; /* Display the list items inline */
+}
+
+.header-container nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.header-container nav ul li:last-child {
+  margin-right: 0;
+}
+
+.header-container nav ul li a {
+  text-decoration: none;
+  color: white; /* White text color */
+  font-size: 1.2em; /* Larger font size */
+  font-family: "Brush Script MT", cursive;
+  font-weight: bold; /* Make the text bolder */
+}
+
+.header-container nav ul li a:hover {
+  color: yellow; /* Yellow text color on hover */
+}

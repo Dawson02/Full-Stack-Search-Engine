@@ -1,0 +1,24 @@
+.footer-container {
+  background-color: #333; /* Dark background color */
+  color: #fff; /* White text color */
+  padding: 10px 0; /* Add some padding */
+  text-align: center; /* Center align text */
+  position: fixed; /* Position the footer */
+  bottom: 0; /* Stick it to the bottom */
+  width: 100%; /* Full width */
+  opacity: 0; /* Initially hide the footer */
+  transition: opacity 0.5s ease; /* Smooth transition for opacity change */
+}
+
+.footer-container.visible {
+  opacity: 1; /* Make the footer visible */
+}
+
+.footer-content {
+  max-width: 90%; /* Set maximum width */
+  margin: 0 auto; /* Center align content */
+}
+
+.footer-content p {
+  margin: 5px 0; /* Add some margin between paragraphs */
+}
