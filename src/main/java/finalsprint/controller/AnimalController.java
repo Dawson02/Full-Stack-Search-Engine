@@ -26,14 +26,7 @@ public class AnimalController {
     }
 
     @GetMapping("/search")
-    public List<Animal> searchAnimals(@RequestParam(required = false) String species,
-                                      @RequestParam(required = false) Integer age,
-                                      @RequestParam(required = false) String color,
-                                      @RequestParam(required = false) Double weight,
-                                      @RequestParam(required = false) String habitat,
-                                      @RequestParam(required = false) String diet,
-                                      @RequestParam(required = false) Integer averageLifespan,
-                                      @RequestParam(required = false) String predators) {
-        return animalService.searchAnimals(species, age, color, weight, habitat, diet, averageLifespan, predators);
+    public List<Animal> searchAnimals(@RequestParam(required = false) String search) {
+        return animalService.searchAnimals(search);
     }
 }
