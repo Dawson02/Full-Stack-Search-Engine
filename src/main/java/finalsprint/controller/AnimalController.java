@@ -7,6 +7,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/animals")
+@CrossOrigin(origins = "*")
 public class AnimalController {
     private final AnimalService animalService;
 
@@ -26,7 +27,7 @@ public class AnimalController {
     }
 
     @GetMapping("/search")
-    public List<Animal> searchAnimals(@RequestParam(required = false) String search) {
+    public List<Animal> searchAnimals(@RequestParam(required = true) String search) {
         return animalService.searchAnimals(search);
     }
 }

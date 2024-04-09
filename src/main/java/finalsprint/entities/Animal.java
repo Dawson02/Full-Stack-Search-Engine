@@ -18,12 +18,12 @@ public class Animal {
     @Id
     private Long id;
     private String species;
-    private int age;
+    private String age;
     private String color;
-    private double weight;
+    private String weight;
     private String habitat;
     private String diet;
-    private int averageLifespan;
+    private String averageLifespan;
     private String predators;
 
     //Getters and Setters
@@ -43,11 +43,11 @@ public class Animal {
         this.species = species;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -59,11 +59,11 @@ public class Animal {
         this.color = color;
     }
 
-    public double getWeight() {
+    public String getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 
@@ -83,11 +83,11 @@ public class Animal {
         this.diet = diet;
     }
 
-    public int getAverageLifespan() {
+    public String getAverageLifespan() {
         return averageLifespan;
     }
 
-    public void setAverageLifespan(int averageLifespan) {
+    public void setAverageLifespan(String averageLifespan) {
         this.averageLifespan = averageLifespan;
     }
 
