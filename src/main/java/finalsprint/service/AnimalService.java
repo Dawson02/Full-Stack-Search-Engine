@@ -3,6 +3,8 @@ import finalsprint.entities.Animal;
 import finalsprint.repository.AnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.util.StringUtils;
@@ -26,22 +28,41 @@ public class AnimalService {
     }
 
     public List<Animal> searchAnimals(String searchString) {
-        Specification<Animal> spec = Specification.where(null);
+        List <Animal> animalSearchResults = new ArrayList<>();
+        List <Animal> animals = animalRepository.findAll();
 
-        if (!StringUtils.isEmpty(searchString)) {
-            spec = spec.or((root, query, criteriaBuilder) ->
-                    criteriaBuilder.like(criteriaBuilder.lower(root.get("species")), "%" + searchString.toLowerCase() + "%")
-            ).or((root, query, criteriaBuilder) ->
-                    criteriaBuilder.like(criteriaBuilder.lower(root.get("color")), "%" + searchString.toLowerCase() + "%")
-            ).or((root, query, criteriaBuilder) ->
-                    criteriaBuilder.like(criteriaBuilder.lower(root.get("habitat")), "%" + searchString.toLowerCase() + "%")
-            ).or((root, query, criteriaBuilder) ->
-                    criteriaBuilder.like(criteriaBuilder.lower(root.get("diet")), "%" + searchString.toLowerCase() + "%")
-            ).or((root, query, criteriaBuilder) ->
-                    criteriaBuilder.like(criteriaBuilder.lower(root.get("predators")), "%" + searchString.toLowerCase() + "%")
-            );
+        if (animals == null) {
+            System.out.println("Error: No animals found");
+        } else {
+            for (Animal animal : animals) {
+                if (animal.getSpecies().toLowerCase().contains(searchString.toLowerCase())) {
+                    animalSearchResults.add(animal);
+               }
+                if (animal.getAge().contains(searchString)) {
+                    animalSearchResults.add(animal);
+                }
+                if (animal.getColor().toLowerCase().contains(searchString.toLowerCase())) {
+                    animalSearchResults.add(animal);
+                }
+                if (animal.getWeight().contains(searchString)) {
+                    animalSearchResults.add(animal);
+                }
+                if (animal.getHabitat().toLowerCase().contains(searchString.toLowerCase())) {
+                    animalSearchResults.add(animal);
+                }
+                if (animal.getDiet().toLowerCase().contains(searchString.toLowerCase())) {
+                    animalSearchResults.add(animal);
+                }
+                if (animal.getAverageLifespan().contains(searchString)) {
+                    animalSearchResults.add(animal);
+                }
+                if (animal.getPredators().toLowerCase().contains(searchString.toLowerCase())) {
+                    animalSearchResults.add(animal);
+                }
+            }
         }
 
-        return animalRepository.findAll(spec);
+        return animalSearchResults;
     }
+
 }
