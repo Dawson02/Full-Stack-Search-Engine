@@ -60,3 +60,27 @@ body {
 .search-container button:hover {
   background-color: #218838; /* Darker green on hover */
 }
+
+.searchbtn button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.animal-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* Adjust the gap as per your preference */
+}
+
+.animal-item {
+  background-color: #f0f0f0; /* Light gray background color */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow effect */
+  border: 3px solid black;
+}
+
+/* Optional: Add additional styling to the individual animal items */
+.animal-item p {
+  margin: 5px 0;
+}
